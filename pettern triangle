@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        int row_no=1;
+        int cspace=n-1;
+        int cstar=1;
+        while(row_no<=n){
+            int space=1;
+            while(space<=cspace){
+                System.out.print("\t");
+                space=space+1;
+            }
+            int num=row_no;
+            for(int i=1; i<=cstar; i++){
+                System.out.print(num+"\t");
+                if(i<row_no){
+                    num++;
+                }
+                else{
+                    num--;
+                }
+            }
+            row_no=row_no+1;
+            cspace=cspace-1;
+            cstar=cstar+2;
+            System.out.println();
+
+        }
+    }
+}
