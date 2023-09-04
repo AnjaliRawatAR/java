@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main {
+    public static void main (String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n= sc.nextInt();
+        int row_no = 1;
+        int cstar=n;
+        int cspace=0;
+        while(row_no<=(2*n)-1){
+            int left=1;
+            while( left<= cstar){
+                System.out.print("*");
+                left=left+1;
+            }
+            int space=1;
+            while(space<cspace){
+                System.out.print(" ");
+                space=space+1;
+            }
+            int right=1;
+            if(row_no==1 || row_no==(2*n)-1){
+                while(right<cstar){
+                    System.out.print("*");
+                    right=right+1;
+                }
+            }
+            else{
+                while(right<=cstar){
+                    System.out.print("*");
+                    right=right+1;
+                }
+            }
+            if(row_no< n){
+                cspace=cspace+2;
+                cstar=cstar-1;
+            }
+            else{
+                cspace=cspace-2;
+                cstar=cstar+1;
+            }
+            row_no=row_no+1;
+            System.out.println();
+        }
+
+    }
+}
